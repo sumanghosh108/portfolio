@@ -64,7 +64,7 @@ body {
 }
 
 .space-x-6 > *:not(:first-child) {
-  margin-left: 1.5rem; /* 24px */
+  margin-left: 0.5rem; /* 24px */
 }
 
 .space-y-2 > *:not(:first-child) {
@@ -84,8 +84,8 @@ body {
   padding-bottom: 0.75rem;
 }
 .py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .py-6 {
   padding-top: 1.5rem;
@@ -176,6 +176,37 @@ body {
 .min-h-hero {
   min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
 }
+
+.icon-link {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-label {
+  visibility: hidden;
+  opacity: 0;
+  background: #222;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 2px 8px;
+  position: absolute;
+  bottom: 110%; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.icon-link:hover .icon-label,
+.icon-link:focus .icon-label {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 /* Colors */
 .bg-gray-50 {
@@ -283,10 +314,66 @@ body {
   border-style: solid;
 }
 
+/* Tech stack badge styles for project cards */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-stack-text,
+.tech-badge {
+  display: inline-block;
+  background: #8e9aa7;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.9rem;
+  margin: 0 0.25rem 0.5rem 0;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+}
+
+.tech-badge {
+  background: #5e6b85;
+}
+
+.tech-badge:hover {
+  background: #06b6d4;
+  color: #fff;
+}
+
+/* Project Filter Buttons */
+.project-filters {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.filter-btn {
+  background: #23272f;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: #22c1d6;
+  color: #23272f;
+}
+
 /* Specific Component Styles */
 /* Navigation */
 nav {
-  background-color: #ffffff;
+  background-color: #cbdae8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 1rem 0;
   position: sticky;
@@ -329,7 +416,7 @@ nav h1 a {
 }
 
 nav h1 a:hover {
-  color: #82b669; /* Darker red on hover */
+  color: #7da2e6; /* Darker red on hover */
 }
 
 /* Alternatively, you could style the h1 element directly */
