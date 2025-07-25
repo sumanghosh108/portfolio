@@ -662,6 +662,66 @@ section h2 {
   /* .social-sidebar { display: none; } */
 }
 
+/* Make highlights section full width with background styling */
+#professional-highlights {
+  width: 100vw;               /* Ensures section spans the entire viewport */
+  margin-left: 50%;
+  transform: translateX(-50%);
+  /* background: #afb7c8; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;            /* Allows containers to wrap on smaller screens */
+  padding: 48px 0;
+  box-sizing: border-box;
+}
+
+/* Card styling for highlight containers */
+#professional-highlights > div {
+  background: #c3e0e39b;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(150, 203, 199, 0.07);
+  padding: 2rem 1.5rem;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  flex: 1 1 220px;
+  transition: box-shadow 0.2s;
+}
+
+#professional-highlights > div:hover {
+  box-shadow: 0 8px 32px rgba(24, 28, 37, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  #professional-highlights {
+    gap: 1rem;
+    padding: 32px 0;
+  }
+  #professional-highlights > div {
+    min-width: 150px;
+    padding: 1.2rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #professional-highlights {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 24px 0;
+  }
+  #professional-highlights > div {
+    margin: 0 auto;
+    width: 96vw;
+    min-width: unset;
+    max-width: unset;
+  }
+}
+
+
 /* --- Skills Section Styles --- */
 
 #skills-section .grid {
