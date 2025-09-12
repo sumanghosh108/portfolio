@@ -365,13 +365,12 @@ body {
   color: #fff;
   font-size: 1.4rem;
   font-family: 'Inter', sans-serif;
-  margin: 0 40px;             /* adjust spacing between logos */
+  margin: 0 30px;             /* adjust spacing between logos */
   white-space: nowrap;
   display: flex;
   align-items: center;
 }
 
-/* Add custom styles for specific brands if needed */
 /* .logo[data-brand="nvidia"] { color: #76B900; } */
 
 @keyframes scroll-logos {
