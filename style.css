@@ -215,26 +215,39 @@ nav {
 /* Tech Stack Marquee */
 .tech-stack {
     background: var(--bg-light);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .marquee {
     display: flex;
-    animation: scroll 30s linear infinite;
-    gap: 3rem;
+    width: fit-content;
+    /* user-select: none; */
+    animation: scroll 25s linear infinite;
+    gap: 1rem;
+    /* min-width: 100%; */
 }
 
 .tech-item {
+    display: inline-block;
     flex-shrink: 0;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     background: var(--white);
     border-radius: 20px;
     font-weight: 500;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px) scale(1.05);
 }
 
 @keyframes scroll {
+    /* from { transform: translateX(0); }
+    to { transform: translateX(-33.333%); } */
     0% {
         transform: translateX(0);
     }
@@ -257,7 +270,7 @@ section {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: rgb(116, 238, 59);
 }
 
 /* Animated Backgrounds */
@@ -353,7 +366,7 @@ section {
 }
 
 /* RGB layer */
-.about-rgb-bg {
+/* .about-rgb-bg {
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -365,7 +378,7 @@ section {
     background-size: 300% 300%;
     animation: aboutRGB 14s ease infinite;
     z-index: 0;
-}
+} */
 
 /* Keep content above RGB */
 #about .container {
@@ -422,7 +435,7 @@ section {
 }
 
 /* About Section */
-#about {
+/* #about {
     position: relative;
 }
 
@@ -436,7 +449,7 @@ section {
 
 .about-text p {
     margin-bottom: 1.5rem;
-    color: var(--text-light);
+    color: rgb(255, 47, 0);
     line-height: 1.8;
 }
 
@@ -496,7 +509,7 @@ section {
 .stat-label {
     color: var(--text-light);
     font-size: 0.9rem;
-}
+} */
 
 /* Skills Section */
 .skills-container {
@@ -528,7 +541,7 @@ section {
 }
 
 /* Projects Section */
-#projects {
+/* #projects {
     background: var(--bg-light);
 }
 
@@ -561,9 +574,9 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}
+} */
 
-.project-card {
+/* .project-card {
     background: var(--white);
     border-radius: 10px;
     overflow: hidden;
@@ -620,7 +633,7 @@ section {
 
 .project-links a:hover {
     color: var(--secondary-color);
-}
+} */
 
 /* Certificates Section */
 .certificates-grid {
@@ -668,7 +681,7 @@ section {
     overflow: hidden;
 }
 
-#contact::before {
+#contact {
     content: '';
     position: absolute;
     top: 0;
@@ -678,7 +691,7 @@ section {
     background-image: 
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    animation: contactFloat 15s ease-in-out infinite;
+    /* animation: contactFloat 15s ease-in-out infinite; */
 }
 
 @keyframes fadeIn {
@@ -1288,7 +1301,7 @@ nav {
 }
 
 /* Tech Stack Marquee */
-.tech-stack {
+/* .tech-stack {
     background: var(--bg-light);
     padding: 2rem 0;
     overflow: hidden;
@@ -1316,7 +1329,7 @@ nav {
     100% {
         transform: translateX(-50%);
     }
-}
+} */
 
 /* Section Styles */
 section {
@@ -1428,6 +1441,10 @@ section {
     position: relative;
 }
 
+#about .section-title{
+  color: #5fef37;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr;
@@ -1438,25 +1455,26 @@ section {
 
 .about-text p {
     margin-bottom: 1.5rem;
-    color: var(--text-light);
+    color: rgb(226, 230, 230);
     line-height: 1.8;
 }
 
 .ethics-section {
-    background: var(--bg-light);
+    background: rgba(181, 132, 219, 0.281);
     padding: 2rem;
     border-radius: 10px;
     margin-top: 2rem;
 }
 
 .ethics-section h3 {
-    color: var(--primary-color);
+    color: cyan;
     margin-bottom: 1rem;
 }
 
 .ethics-section ul {
     list-style: none;
     padding-left: 0;
+    color: #59ef37;
 }
 
 .ethics-section li {
@@ -1483,7 +1501,7 @@ section {
 .stat-card {
     text-align: center;
     padding: 2rem;
-    background: var(--white);
+    background: rgba(206, 220, 128, 0.111);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -1501,6 +1519,14 @@ section {
 }
 
 /* Skills Section */
+
+#skills .section-title {
+    color: #7cf5ff;              /* cyan */
+    text-shadow: 
+        0 0 8px rgba(124, 245, 255, 0.6),
+        0 0 16px rgba(124, 245, 255, 0.4);
+}
+
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1508,14 +1534,14 @@ section {
 }
 
 .skill-category {
-    background: var(--white);
+    background: rgba(236, 230, 230, 0.178);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .skill-category h3 {
-    color: var(--primary-color);
+    color: rgb(182, 237, 93);
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
 }
@@ -1526,10 +1552,18 @@ section {
 
 .skill-category li {
     padding: 0.5rem 0;
-    color: var(--text-light);
+    color: rgb(251, 250, 250);
 }
 
 /* Projects Section */
+
+#projects .section-title {
+    color: #7cf5ff;              /* cyan */
+    text-shadow: 
+        0 0 8px rgba(124, 245, 255, 0.6),
+        0 0 16px rgba(124, 245, 255, 0.4);
+}
+
 #projects {
     background: var(--bg-light);
 }
@@ -1546,9 +1580,9 @@ section {
 
 .filter-btn {
     padding: 0.5rem 1.5rem;
-    border: 2px solid var(--primary-color);
+    border: 2px solid rgb(255, 179, 0);
     background: transparent;
-    color: var(--primary-color);
+    color: rgb(246, 247, 246);
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s;
@@ -1559,8 +1593,8 @@ section {
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    /* background: rgb(210, 214, 231); */
+    color: rgb(228, 41, 41);
 }
 
 .projects-grid {
@@ -1572,7 +1606,7 @@ section {
 }
 
 .project-card {
-    background: var(--white);
+    background: rgba(98, 167, 167, 0.422);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1593,10 +1627,11 @@ section {
 
 .project-content {
     padding: 1.5rem;
+    color:#fafafa
 }
 
 .project-content h3 {
-    color: var(--text-dark);
+    color: rgb(238, 231, 231);
     margin-bottom: 1rem;
 }
 
@@ -1609,10 +1644,10 @@ section {
 
 .tag {
     padding: 0.25rem 0.75rem;
-    background: var(--bg-light);
+    /* background: rgb(227, 220, 204); */
     border-radius: 15px;
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: rgb(10, 223, 152);
 }
 
 .project-links {
@@ -1622,7 +1657,7 @@ section {
 }
 
 .project-links a {
-    color: var(--primary-color);
+    color: greenyellow;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -1631,11 +1666,18 @@ section {
 }
 
 .project-links a:hover {
-    color: var(--secondary-color);
+    color: red;
     text-decoration: underline;
 }
 
 /* Certificates Section */
+#certificates .section-title {
+    color: #59ef37;              /* cyan */
+    text-shadow: 
+        0 0 8px rgba(124, 245, 255, 0.6),
+        0 0 16px rgba(124, 245, 255, 0.4);
+}
+
 .certificates-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1643,7 +1685,7 @@ section {
 }
 
 .certificate-card {
-    background: var(--white);
+    background: rgba(194, 215, 215, 0.299);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1653,12 +1695,12 @@ section {
 }
 
 .certificate-card h3 {
-    color: var(--text-dark);
+    color: rgb(75, 233, 17);
     margin-bottom: 1rem;
 }
 
 .certificate-issuer {
-    color: var(--primary-color);
+    color: rgb(255, 0, 0);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -1670,7 +1712,7 @@ section {
 }
 
 .certificate-card a {
-    color: var(--primary-color);
+    color: cyan;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
@@ -1685,7 +1727,7 @@ section {
 
 /* Contact Section */
 #contact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -1698,10 +1740,10 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    /* background-image: 
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    animation: contactFloat 15s ease-in-out infinite;
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%); */
+    /* animation: contactFloat 15s ease-in-out infinite; */
 }
 
 @keyframes contactFloat {
