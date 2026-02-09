@@ -1564,9 +1564,9 @@ section {
         0 0 16px rgba(124, 245, 255, 0.4);
 }
 
-#projects {
-    background: var(--bg-light);
-}
+/* #projects {
+
+} */
 
 .project-filters {
     display: flex;
@@ -1631,7 +1631,7 @@ section {
 }
 
 .project-content h3 {
-    color: rgb(238, 231, 231);
+    color: rgb(201, 126, 47);
     margin-bottom: 1rem;
 }
 
