@@ -116,6 +116,7 @@
 
     <!-- About Section -->
     <section id="about" class="animated-bg particles-bg">
+        <div class="about-rgb-bg"></div>
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
@@ -162,7 +163,11 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="animated-bg geometric-bg">
+    <section id="skills" class="animated-bg geometric-bg video-section reveal-section">
+        <video class="video-bg" autoplay muted loop playsinline>
+        <source src="videos/skill_video.mp4" type="video/mp4">
+        </video>
+    <div class="video-overlay"></div>
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
@@ -240,7 +245,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="animated-bg grid-bg">
+    <section id="projects" class="animated-bg grid-bg reveal-section">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             
@@ -339,7 +344,7 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates" class="animated-bg wave-bg">
+    <section id="certificates" class="animated-bg wave-bg reveal-section">
         <div class="container">
             <h2 class="section-title">Certificates & Specialization</h2>
             <!-- NOTE: Update the certificate links below with your actual credential URLs -->
@@ -519,6 +524,29 @@
                 }
             });
         });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".reveal-section");
+            
+            const observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                        } else {
+                            entry.target.classList.remove("active");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.25
+                }
+            );
+            
+            sections.forEach(section => observer.observe(section));
+        });
+
 
         // Contact Form Handling
         const contactForm = document.getElementById('contactForm');
