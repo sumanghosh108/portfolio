@@ -1,50 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Suman Ghosh - Data Scientist passionate about building ethical and impactful solutions">
+    <meta name="description"
+        content="Suman Ghosh - Data Scientist passionate about building ethical and impactful solutions">
     <meta name="keywords" content="Data Science, Machine Learning, MLOps, Python, SQL, Power BI, Portfolio">
     <meta name="author" content="Suman Ghosh">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Suman Ghosh - Data Professional">
-    <meta property="og:description" content="Data Scientist passionate about building ethical and impactful AI solutions">
+    <meta property="og:description"
+        content="Data Scientist passionate about building ethical and impactful AI solutions">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sumanghosh108.github.io/portfolio/">
-    
+
     <title>Suman Ghosh - Data Professional</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .project-card {
             margin: 20px;
             padding: 20px;
-            border: 1px solid #ddd;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
             display: block;
+            color: #f9fafb;
+            transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
         .filter-btn {
             margin: 5px;
-            padding: 10px 20px;
+            padding: 8px 20px;
             cursor: pointer;
-            border: 2px solid #333;
-            background: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            color: #f9fafb;
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
         .filter-btn.active {
-            background: #333;
+            background: #3b82f6;
             color: white;
-        }
-        
-        .project-card {
-            transition: opacity 0.3s ease;
+            border-color: #3b82f6;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
         }
     </style>
 </head>
+
 <body>
+    <!-- Global Video Background -->
+    <div class="global-video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="videos/rotateglobewithcosmic.mp4" type="video/mp4">
+        </video>
+        <div class="global-video-overlay"></div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="logo">🤖 >_  echo Suman</a>
+            <a href="#home" class="logo">🤖 >_ echo Suman</a>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -63,15 +92,14 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <video class="video-background" autoplay muted loop playsinline>
-            <source src="videos/rotateglobewithcosmic.mp4" type="video/mp4">
-        </video>
         <div class="hero-content">
             <img src="images/pic_suman.jpg" alt="Suman Ghosh" class="profile-image">
             <h1>Hi, I'm Suman</h1>
             <h2>Machine Learning/MLOps/Data Engineer</h2>
-            <p>Passionate about building ethical and impactful AI integrated solutions. I leverage data to uncover insights, build predictive models, and drive informed decisions, always with a strong focus on fairness, transparency, and user well-being.</p>
-            
+            <p>Passionate about building ethical and impactful AI integrated solutions. I leverage data to uncover
+                insights, build predictive models, and drive informed decisions, always with a strong focus on fairness,
+                transparency, and user well-being.</p>
+
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/sumanghosh-p38" target="_blank">LinkedIn</a>
                 <a href="https://github.com/sumanghosh108" target="_blank">GitHub</a>
@@ -79,7 +107,7 @@
                 <!-- <a href="https://www.geeksforgeeks.org/user/suman_naba/" target="_blank">GFG</a> -->
                 <!-- <a href="https://www.credly.com/users/suman-ghosh.3e6046c1" target="_blank">Credly</a> -->
             </div>
-            
+
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -149,35 +177,53 @@
             <span class="tech-item">CI/CD</span>
             <span class="tech-item">Jupyter Notebook</span>
             <span class="tech-item">VS Code</span>
-            
+
         </div>
     </div>
 
     <!-- About Section -->
     <section id="about" class="animated-bg particles-bg">
-        <video class="video-bg" autoplay muted loop playsinline>
-        <source src="videos/3129977-uhd_3840_2160_30fps.mp4" type="video/mp4">
-        </video>
         <div class="about-rgb-bg"></div>
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am Suman Ghosh, a highly motivated and detail-oriented B.Tech Computer Science graduate with a strong foundation in Data Science, Machine Learning, MLOps and Business Intelligence. With hands-on experience in real-world projects and a passion for transforming data into actionable insights, I aim to drive data-informed decision-making in impactful domains.</p>
-                    
-                    <p>I specialize in Python, SQL, and Power BI, and have applied my knowledge in both academic and professional environments. My key strengths lie in predictive modeling, deep learning, dashboard development, and extracting business value from organizational data. I've completed practical simulations such as the PwC Switzerland Virtual Experience where I built interactive dashboards for call center performance, customer retention, and D&I insights using Power BI.</p>
-                    
-                    <p>In the field of Deep Learning, I led a Brain Tumor Classification project, processing over 19,000+ MRI images using CNN, VGG16, VGG19, and YOLOv8, achieving a 93% accuracy rate. My other projects include Air Quality Index forecasting using Random Forest, XGBoost, and LSTM, and a Banking System built with Python and SQL.</p>
-                    
-                    <p>With strong communication, time management, and leadership skills, I thrive in collaborative environments and am always eager to learn new technologies. I am currently seeking challenging opportunities where I can apply my analytical thinking, creativity, and technical skills to solve real-world problems in AI/ML roles.</p>
+                    <p>I am Suman Ghosh, a highly motivated and detail-oriented B.Tech Computer Science graduate with a
+                        strong foundation in Data Science, Machine Learning, MLOps and Business Intelligence. With
+                        hands-on experience in real-world projects and a passion for transforming data into actionable
+                        insights, I aim to drive data-informed decision-making in impactful domains.</p>
+
+                    <p>I specialize in Python, SQL, and Power BI, and have applied my knowledge in both academic and
+                        professional environments. My key strengths lie in predictive modeling, deep learning, dashboard
+                        development, and extracting business value from organizational data. I've completed practical
+                        simulations such as the PwC Switzerland Virtual Experience where I built interactive dashboards
+                        for call center performance, customer retention, and D&I insights using Power BI.</p>
+
+                    <p>In the field of Deep Learning, I led a Brain Tumor Classification project, processing over
+                        19,000+ MRI images using CNN, VGG16, VGG19, and YOLOv8, achieving a 93% accuracy rate. My other
+                        projects include Air Quality Index forecasting using Random Forest, XGBoost, and LSTM, and a
+                        Banking System built with Python and SQL.</p>
+
+                    <p>With strong communication, time management, and leadership skills, I thrive in collaborative
+                        environments and am always eager to learn new technologies. I am currently seeking challenging
+                        opportunities where I can apply my analytical thinking, creativity, and technical skills to
+                        solve real-world problems in AI/ML roles.</p>
 
                     <div class="ethics-section">
                         <h3>My Commitment to Responsible Data Professional</h3>
-                        <p>I firmly believe that data should be conducted with a strong ethical compass. My approach emphasizes building models that are not only accurate and efficient but also fair, transparent, and interpretable. I am committed to:</p>
+                        <p>I firmly believe that data should be conducted with a strong ethical compass. My approach
+                            emphasizes building models that are not only accurate and efficient but also fair,
+                            transparent, and interpretable. I am committed to:</p>
                         <ul>
-                            <li><strong>Data Privacy:</strong> Ensuring the secure and ethical handling of sensitive information, adhering to privacy regulations, and implementing robust anonymization techniques where appropriate.</li>
-                            <li><strong>Bias Detection & Mitigation:</strong> Actively identifying and addressing biases in data and algorithms to prevent discriminatory outcomes and promote equitable solutions.</li>
-                            <li><strong>Societal Impact:</strong> Consciously considering the broader societal implications of my work, aiming to create positive impact while minimizing potential harms.</li>
+                            <li><strong>Data Privacy:</strong> Ensuring the secure and ethical handling of sensitive
+                                information, adhering to privacy regulations, and implementing robust anonymization
+                                techniques where appropriate.</li>
+                            <li><strong>Bias Detection & Mitigation:</strong> Actively identifying and addressing biases
+                                in data and algorithms to prevent discriminatory outcomes and promote equitable
+                                solutions.</li>
+                            <li><strong>Societal Impact:</strong> Consciously considering the broader societal
+                                implications of my work, aiming to create positive impact while minimizing potential
+                                harms.</li>
                         </ul>
                     </div>
                 </div>
@@ -206,10 +252,7 @@
 
     <!-- Skills Section -->
     <section id="skills" class="animated-bg geometric-bg video-section">
-        <video class="video-bg" autoplay muted loop playsinline>
-        <source src="videos/skill_video.mp4" type="video/mp4">
-        </video>
-    <div class="video-overlay"></div>
+        <div class="video-overlay"></div>
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
@@ -222,7 +265,7 @@
                         <!-- <li>{ } C</li> -->
                     </ul>
                 </div>
-                
+
                 <div class="skill-category">
                     <h3>Frameworks & Libraries</h3>
                     <ul>
@@ -236,7 +279,7 @@
                         <li>🧩 Plotly</li>
                     </ul>
                 </div>
-                
+
                 <div class="skill-category">
                     <h3>Tools & Databases</h3>
                     <ul>
@@ -251,17 +294,18 @@
                         <li>📈 Power BI</li>
                     </ul>
                 </div>
-                
+
                 <div class="skill-category">
                     <h3>Platforms & Cloud</h3>
                     <ul>
                         <li>🌐 Kaggle</li>
-                        <li>💭 AWS (Lambda, RDS PostgreSQL, S3, EC2, SageMaker, Step Functions,  IAM, Textract, DynamoDB, CloudWatch)</li>
+                        <li>💭 AWS (Lambda, RDS PostgreSQL, S3, EC2, SageMaker, Step Functions, IAM, Textract, DynamoDB,
+                            CloudWatch)</li>
                         <li>🔗 GitHub (Version Control, GitHub Action [CI/CD] )</li>
                         <!-- <li>➤ Google Colab(ML model Training)</li> -->
                     </ul>
                 </div>
-                
+
                 <div class="skill-category">
                     <h3>Concepts</h3>
                     <ul>
@@ -272,7 +316,7 @@
                         <li>📊 Statistical Analysis</li>
                     </ul>
                 </div>
-                
+
                 <div class="skill-category">
                     <h3>Soft Skills</h3>
                     <ul>
@@ -290,28 +334,31 @@
 
     <!-- Projects Section -->
     <section id="projects" class="animated-bg grid-bg">
-        <video class="video-bg" autoplay muted loop playsinline>
-        <source src="videos/4389357-uhd_3840_2024_30fps.mp4" type="video/mp4">
-        </video>
         <div class="container">
             <h2 class="section-title">Projects</h2>
-            
+
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ml">Machine Learning</button>
-                <button class="filter-btn" data-filter="viz">Data Visualization</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning & AI</button>
+                <button class="filter-btn" data-filter="viz">Analysis</button>
                 <button class="filter-btn" data-filter="db">Database</button>
             </div>
-            
+
             <div class="projects-grid">
-                <div class="project-card" data-category="ml">
+                <div class="project-card" data-category="ml db">
                     <!-- <img src="images/std.jpg" alt="Brain Tumor Detection" class="project-image"> -->
                     <div class="project-content">
-                        <h3>Student Performance </h3>
-                        <p>Performance analysis and prediction using Machine learning.</p>
+                        <h3>AgenticAI </h3>
+                        <p> Autonomous AI-driven research assistant that automates the entire research process.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
-                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">LangChain</span>
+                            <span class="tag">LangGraph</span>
+                            <span class="tag">OpenRouter</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Docker</span>
                             <!-- <span class="tag">Machine Learning</span> -->
                         </div>
                         <div class="project-links">
@@ -321,26 +368,10 @@
                 </div>
 
                 <div class="project-card" data-category="ml">
-                    <!-- <img src="images/AQI.png" alt="Brain Tumor Detection" class="project-image"> -->
-                    <div class="project-content">
-                        <h3>Air Quality Index Prediction </h3>
-                        <p>AQI prediction using Machine learning.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Scikit-learn</span>
-                            <!-- <span class="tag">Machine Learning</span> -->
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/sumanghosh108/Air-Quality-Index-Prediction" target="_blank">GitHub →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="ml">
                     <!-- <img src="images/brain_disease_edit.jpg" alt="Brain Tumor Detection" class="project-image"> -->
                     <div class="project-content">
-                        <h3>Brain Tumor Detection and Prediction</h3>
-                        <p>Processed MRI images, achieving 93% accuracy in tumor classification.</p>
+                        <h3>Tumor Detection and Prediction System</h3>
+                        <p>Brain tumor detection and prediction system through MRI scans .</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">Scikit-learn</span>
@@ -356,9 +387,42 @@
                 </div>
 
                 <div class="project-card" data-category="ml">
+                    <!-- <img src="images/std.jpg" alt="Brain Tumor Detection" class="project-image"> -->
+                    <div class="project-content">
+                        <h3>Performance Report</h3>
+                        <p>Student performance analysis and prediction based on their criteria.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <!-- <span class="tag">Machine Learning</span> -->
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/sumanghosh108/mlproject" target="_blank">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ml">
+                    <!-- <img src="images/AQI.png" alt="Brain Tumor Detection" class="project-image"> -->
+                    <div class="project-content">
+                        <h3>AQI Prediction </h3>
+                        <p>Air quality index prediction.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <!-- <span class="tag">Machine Learning</span> -->
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/sumanghosh108/Air-Quality-Index-Prediction"
+                                target="_blank">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ml">
                     <!-- <img src="images/brain_disease_edit.jpg" alt="Brain Tumor Detection" class="project-image"> -->
                     <div class="project-content">
-                        <h3>Employee Management System</h3>
+                        <h3>EMS portal</h3>
                         <p>Enterprise employee management solutions.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
@@ -366,9 +430,10 @@
                             <span class="tag">FastAPI</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/sumanghosh108/EmployeeManagementSystem" target="_blank">GitHub</a>
-                            <a href="https://github.com/sumanghosh108/EmployeeManagementSystem/blob/master/README.md" target="_blank">Overview</a>
-                            <a href="https://github.com/sumanghosh108/portfolio/blob/main/docs/EMS_documantation.md" target="_blank">Documentation</a>
+                            <a href="https://github.com/sumanghosh108/EmployeeManagementSystem"
+                                target="_blank">GitHub</a>
+                            <a href="https://github.com/sumanghosh108/EmployeeManagementSystem/blob/master/README.md"
+                                target="_blank">Overview</a>
                         </div>
                     </div>
                 </div>
@@ -376,8 +441,8 @@
                 <div class="project-card" data-category="db">
                     <!-- <img src="images/download.jpg" alt="Brain Tumor Detection" class="project-image"> -->
                     <div class="project-content">
-                        <h3>University Location Finder</h3>
-                        <p>Convert university names entered by users into geographical locations.</p>
+                        <h3>University Finder</h3>
+                        <p>Find university locations and maps across entire globe.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">SQLite</span>
@@ -393,8 +458,8 @@
                 <div class="project-card" data-category="viz">
                     <!-- <img src="images/images.jpg" alt="Automobile Sales Dashboard" class="project-image"> -->
                     <div class="project-content">
-                        <h3>Automobile Sales Dash App</h3>
-                        <p>Interactive Plotly dashboard for analyzing automobile sales trends with real-time data visualization.</p>
+                        <h3>Dash App</h3>
+                        <p>Interactive Plotly dashboard for analyzing automobile sales trends with real-time data.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">Dash</span>
@@ -402,7 +467,8 @@
                             <span class="tag">Pandas</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/sumanghosh108/Automobile-sales-dash-app" target="_blank">GitHub →</a>
+                            <a href="https://github.com/sumanghosh108/Automobile-sales-dash-app" target="_blank">GitHub
+                                →</a>
                         </div>
                     </div>
                 </div>
@@ -411,7 +477,7 @@
                     <!-- <img src="images/Dash.jpg" alt="Automobile Sales Dashboard" class="project-image"> -->
                     <div class="project-content">
                         <h3>Sales Analytics</h3>
-                        <p>Interactive dashboard for analyzing sales trends with real-time data visualization.</p>
+                        <p>Interactive dashboard for analyzing sales trends with real-time data.</p>
                         <div class="project-tags">
                             <span class="tag">Power BI</span>
                             <span class="tag">Excel</span>
@@ -426,7 +492,7 @@
                     <!-- <img src="images/bank.jpeg" alt="Banking System" class="project-image"> -->
                     <div class="project-content">
                         <h3>Banking System</h3>
-                        <p>Complete banking system with account management, transactions, and reporting features using Python and SQL.</p>
+                        <p>Complete banking solutions.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">SQL</span>
@@ -442,7 +508,8 @@
                     <!-- <img src="images/dashboard.png" alt="Call Center Dashboard" class="project-image"> -->
                     <div class="project-content">
                         <h3>Call Center Optimization</h3>
-                        <p>Power BI dashboard for call center performance analysis, customer retention insights, and D&I metrics from PwC Switzerland Virtual Experience.</p>
+                        <p>Power BI dashboard for call center performance analysis, customer retention insights, and D&I
+                            metrics from PwC Switzerland Virtual Experience.</p>
                         <div class="project-tags">
                             <span class="tag">Power BI</span>
                             <span class="tag">Excel</span>
@@ -457,7 +524,8 @@
                     <!-- <img src="images/quiz.jpeg" alt="Quiz App" class="project-image"> -->
                     <div class="project-content">
                         <h3>Quiz App</h3>
-                        <p>Interactive quiz application with user authentication and score tracking using React and PostgreSQL.</p>
+                        <p>Interactive quiz application with user authentication and score tracking using React and
+                            PostgreSQL.</p>
                         <div class="project-tags">
                             <span class="tag">React</span>
                             <span class="tag">PostgreSQL</span>
@@ -474,9 +542,6 @@
 
     <!-- Certificates Section -->
     <section id="certificates" class="animated-bg wave-bg">
-        <video class="video-bg" autoplay muted loop playsinline>
-        <source src="videos/14683767_3840_2160_30fps.mp4" type="video/mp4">
-        </video>
         <div class="container">
             <h2 class="section-title">Professional Certificates & Specialization</h2>
             <!-- NOTE: Update the certificate links below with your actual credential URLs -->
@@ -485,7 +550,8 @@
                     <h3>Python for Everybody (Specialization)</h3>
                     <p class="certificate-issuer">Issued by: University of Michigan</p>
                     <!-- <p class="certificate-date">Date: January 2025</p> -->
-                    <a href="https://www.coursera.org/account/accomplishments/specialization/LZ979D55TBMM" target="_blank">View Credential →</a>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/LZ979D55TBMM"
+                        target="_blank">View Credential →</a>
                 </div>
 
                 <div class="certificate-card">
@@ -508,7 +574,8 @@
                     <h3>Power BI Job Simulation</h3>
                     <p class="certificate-issuer">Issued by: Forage (PwC Switzerland)</p>
                     <!-- <p class="certificate-date">Date: August 2024</p> -->
-                    <a href="https://github.com/sumanghosh108/certificates/blob/main/a87GpgE6tiku7q3gu_PwC%20Switzerland_iYYYwwRQToqTxbcKc_1709881950057_completion_certificate%20(3).pdf" target="_blank">View Credential →</a>
+                    <a href="https://github.com/sumanghosh108/certificates/blob/main/a87GpgE6tiku7q3gu_PwC%20Switzerland_iYYYwwRQToqTxbcKc_1709881950057_completion_certificate%20(3).pdf"
+                        target="_blank">View Credential →</a>
                 </div>
             </div>
         </div>
@@ -516,77 +583,41 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <video class="video-bg" autoplay muted loop playsinline>
-        <source src="videos/6474141-uhd_3840_2160_25fps.mp4" type="video/mp4">
-        </video>
         <div class="container">
             <div class="contact-wrapper">
                 <!-- Contact Info -->
                 <div class="contact-info-section">
                     <h2>Let's Work Together</h2>
-                    <p>I'm always open to discussing new projects, collaborations, or opportunities in data. Whether you have a question or just want to say hi, feel free to reach out!</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-detail-item">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-detail-content">
-                                <h4>Phone</h4>
-                                <a href="tel:+919535925470">+91 9535925470</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail-item">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-detail-content">
-                                <h4>Email</h4>
-                                <p>sumanghosh2002s@gmail.com</p>
-                                <!-- <a href="/cdn-cgi/l/email-protection#1d6e68707c737a75726e752f2d2d2f6e5d7a707c7471337e7270"><span class="__cf_email__" data-cfemail="91e2e4fcf0fff6f9fee2f9a3a1a1a3e2d1f6fcf0f8fdbff2fefc">[email&#160;protected]</span></a> -->
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail-item">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-detail-content">
-                                <h4>Location</h4>
-                                <p>Bengaluru, Karnataka, India</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links-contact">
-                        <a href="https://www.linkedin.com/in/sumanghosh-p38" target="_blank" class="social-link-btn" title="LinkedIn">💼</a>
-                        <a href="https://github.com/sumanghosh108" target="_blank" class="social-link-btn" title="GitHub">💻</a>
-                        <a href="https://www.kaggle.com/sumangh" target="_blank" class="social-link-btn" title="Kaggle">📊</a>
-                        <a href="https://www.credly.com/users/suman-ghosh.3e6046c1" target="_blank" class="social-link-btn" title="Credly">🏆</a>
-                    </div>
+                    <p>I'm always open to discussing new projects, collaborations, and opportunities in data. Whether
+                        you have a question or just want to say Hi..., feel free to reach out.</p>
                 </div>
-                
                 <!-- Contact Form -->
                 <div class="contact-form-section">
                     <h3>Send Me a Message</h3>
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form id="contactForm" action="https://formspree.io/f/xyknydwd" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Your Email *</label>
                             <input type="email" id="email" name="email" required placeholder="john@example.com">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="subject">Subject *</label>
                             <input type="text" id="subject" name="subject" required placeholder="Project Collaboration">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" required placeholder="Tell me about your project or inquiry..."></textarea>
+                            <textarea id="message" name="message" required
+                                placeholder="Tell me about your project or inquiry..."></textarea>
                         </div>
-                        
+
                         <button type="submit" class="form-submit-btn">Send Message</button>
-                        
+
                         <div id="formMessage" class="form-message"></div>
                     </form>
                 </div>
@@ -600,7 +631,9 @@
         <p>Committed to Ethical Data Professional & Responsible AI</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
@@ -633,9 +666,9 @@
                     const filter = btn.dataset.filter;
 
                     projectCards.forEach(card => {
-                        const category = card.dataset.category;
+                        const categories = (card.dataset.category || '').split(' ');
 
-                        if (filter === 'all' || category === filter) {
+                        if (filter === 'all' || categories.includes(filter)) {
                             card.style.display = 'block';
                             card.style.opacity = '1';
                         } else {
@@ -652,7 +685,7 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
+                if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -664,7 +697,7 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             const sections = document.querySelectorAll(".reveal-section");
-            
+
             const observer = new IntersectionObserver(
                 entries => {
                     entries.forEach(entry => {
@@ -679,7 +712,7 @@
                     threshold: 0.25
                 }
             );
-            
+
             sections.forEach(section => observer.observe(section));
         });
 
@@ -687,25 +720,25 @@
         // document.addEventListener('DOMContentLoaded', function() {
         //     const track = document.querySelector('.marquee');
         //     const items = track.innerHTML;
-            
+
         //     // Duplicate content 4 times to ensure seamless loop
         //     track.innerHTML = items + items + items + items;
         // });
 
         // document.addEventListener('DOMContentLoaded', function() {
         //     const marqueeContent = document.querySelector('.marquee-content');
-            
+
         //     // Clone the content twice to ensure smooth infinite scroll
         //     const clone1 = marqueeContent.cloneNode(true);
         //     const clone2 = marqueeContent.cloneNode(true);
-            
+
         //     marqueeContent.parentElement.appendChild(clone1);
         //     marqueeContent.parentElement.appendChild(clone2);
-            
+
         //     // Calculate animation duration based on content width
         //     const contentWidth = marqueeContent.offsetWidth;
         //     const duration = contentWidth / 50; // Adjust speed by changing 50 (higher = slower)
-            
+
         //     document.querySelectorAll('.marquee-content').forEach(content => {
         //         content.style.animationDuration = duration + 's';
         //     });
@@ -718,15 +751,15 @@
         if (contactForm) {
             contactForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
+
                 const submitBtn = contactForm.querySelector('.form-submit-btn');
                 const originalBtnText = submitBtn.textContent;
-                
+
                 // Show loading state
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
                 formMessage.style.display = 'none';
-                
+
                 try {
                     const formData = new FormData(contactForm);
                     const response = await fetch(contactForm.action, {
@@ -736,7 +769,7 @@
                             'Accept': 'application/json'
                         }
                     });
-                    
+
                     if (response.ok) {
                         formMessage.textContent = 'Thank you for your message! I\'ll get back to you soon.';
                         formMessage.className = 'form-message success';
@@ -750,11 +783,11 @@
                     formMessage.className = 'form-message error';
                     formMessage.style.display = 'block';
                 }
-                
+
                 // Reset button
                 submitBtn.textContent = originalBtnText;
                 submitBtn.disabled = false;
-                });
+            });
         }
     </script>
 </body>

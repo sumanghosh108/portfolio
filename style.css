@@ -6,11 +6,11 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
+    --primary-color: #3b82f6;
+    --secondary-color: #60a5fa;
+    --text-dark: #f8fafc;
+    --text-light: #cbd5e1;
+    --bg-light: rgba(255, 255, 255, 0.05);
     --white: #ffffff;
     --accent: #3b82f6;
 }
@@ -31,9 +31,10 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(15, 23, 42, 0.65);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
     padding: 1rem 0;
 }
@@ -97,25 +98,32 @@ nav {
     padding: 2rem;
 }
 
-.video-background {
-    position: absolute;
+/* Global Video Background */
+.global-video-bg {
+    position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    overflow: hidden;
+}
+
+.global-video-bg video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -2;
 }
 
-.hero::before {
-    content: '';
+.global-video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -214,7 +222,9 @@ nav {
 
 /* Tech Stack Marquee */
 .tech-stack {
-    background: var(--bg-light);
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: 1.5rem 0;
     overflow: hidden;
     position: relative;
@@ -234,23 +244,29 @@ nav {
     display: inline-block;
     flex-shrink: 0;
     padding: 0.5rem 1rem;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
     border-radius: 20px;
     font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
 .tech-item:hover {
     transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 @keyframes scroll {
+
     /* from { transform: translateX(0); }
     to { transform: translateX(-33.333%); } */
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -298,14 +314,22 @@ section {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Particles Animation */
 .particles-bg::before {
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%);
@@ -313,14 +337,24 @@ section {
 }
 
 @keyframes particleFloat {
-    0%, 100% { transform: translate(0, 0); }
-    33% { transform: translate(30px, -30px); }
-    66% { transform: translate(-20px, 20px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    33% {
+        transform: translate(30px, -30px);
+    }
+
+    66% {
+        transform: translate(-20px, 20px);
+    }
 }
 
 /* Geometric Shapes Animation */
 .geometric-bg::before {
-    background-image: 
+    background-image:
         linear-gradient(45deg, transparent 30%, rgba(37, 99, 235, 0.05) 30%, rgba(37, 99, 235, 0.05) 70%, transparent 70%),
         linear-gradient(-45deg, transparent 30%, rgba(59, 130, 246, 0.05) 30%, rgba(59, 130, 246, 0.05) 70%, transparent 70%);
     background-size: 100px 100px;
@@ -328,8 +362,13 @@ section {
 }
 
 @keyframes geometricMove {
-    0% { background-position: 0 0, 50px 50px; }
-    100% { background-position: 100px 100px, 150px 150px; }
+    0% {
+        background-position: 0 0, 50px 50px;
+    }
+
+    100% {
+        background-position: 100px 100px, 150px 150px;
+    }
 }
 
 
@@ -343,7 +382,7 @@ section {
 .reveal-section {
     opacity: 0;
     transform: scale(0.95) translateY(40px);
-    transition: 
+    transition:
         opacity 0.8s ease,
         transform 0.8s ease;
 }
@@ -353,11 +392,25 @@ section {
     transform: scale(1) translateY(0);
 }
 
-#about { transition-delay: 0.1s; }
-#skills { transition-delay: 0.15s; }
-#projects { transition-delay: 0.2s; }
-#certificates { transition-delay: 0.25s; }
-#contact { transition-delay: 0.3s; }
+#about {
+    transition-delay: 0.1s;
+}
+
+#skills {
+    transition-delay: 0.15s;
+}
+
+#projects {
+    transition-delay: 0.2s;
+}
+
+#certificates {
+    transition-delay: 0.25s;
+}
+
+#contact {
+    transition-delay: 0.3s;
+}
 
 /* ===== About RGB Background (Safe Version) ===== */
 #about {
@@ -388,13 +441,23 @@ section {
 
 /* Smooth animation */
 @keyframes aboutRGB {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #about .container {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 40px;
 }
@@ -408,7 +471,7 @@ section {
 
 /* Wave Animation */
 .wave-bg::before {
-    background: 
+    background:
         linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.03), transparent),
         linear-gradient(180deg, transparent, rgba(59, 130, 246, 0.03), transparent);
     background-size: 50% 50%;
@@ -416,13 +479,20 @@ section {
 }
 
 @keyframes wave {
-    0%, 100% { background-position: 0% 0%, 100% 100%; }
-    50% { background-position: 100% 100%, 0% 0%; }
+
+    0%,
+    100% {
+        background-position: 0% 0%, 100% 100%;
+    }
+
+    50% {
+        background-position: 100% 100%, 0% 0%;
+    }
 }
 
 /* Grid Animation */
 .grid-bg::before {
-    background-image: 
+    background-image:
         linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -430,8 +500,13 @@ section {
 }
 
 @keyframes gridScroll {
-    0% { background-position: 0 0; }
-    100% { background-position: 50px 50px; }
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50px 50px;
+    }
 }
 
 /* About Section */
@@ -643,10 +718,12 @@ section {
 }
 
 .certificate-card {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-left: 4px solid var(--primary-color);
 }
 
@@ -675,23 +752,22 @@ section {
 
 /* Contact Section */
 #contact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
 }
 
-#contact {
+#contact::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    /* animation: contactFloat 15s ease-in-out infinite; */
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    z-index: -1;
 }
 
 @keyframes fadeIn {
@@ -699,6 +775,7 @@ section {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -710,8 +787,15 @@ section {
 }
 
 @keyframes contactFloat {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(20px, 20px) rotate(5deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(20px, 20px) rotate(5deg);
+    }
 }
 
 .contact-wrapper {
@@ -821,14 +905,17 @@ section {
 
 /* Contact Form */
 .contact-form-section {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
     padding: 2.5rem;
     border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form-section h3 {
-    color: var(--text-dark);
+    color: var(--white);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
@@ -839,7 +926,7 @@ section {
 
 .form-group label {
     display: block;
-    color: var(--text-dark);
+    color: var(--white);
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
@@ -848,19 +935,31 @@ section {
 .form-group textarea {
     width: 100%;
     padding: 0.9rem;
-    border: 2px solid #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.3s;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--white);
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .form-group textarea {
@@ -1086,7 +1185,9 @@ footer p {
     .contact-form-section h3 {
         font-size: 1.5rem;
     }
-}/* Global Styles */
+}
+
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -1363,7 +1464,8 @@ section {
     height: 100%;
     opacity: 0.05;
     z-index: 0;
-    pointer-events: none; /* Allow clicks through the animation layer */
+    pointer-events: none;
+    /* Allow clicks through the animation layer */
 }
 
 /* Gradient Animation */
@@ -1374,14 +1476,22 @@ section {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Particles Animation */
 .particles-bg::before {
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%);
@@ -1389,14 +1499,24 @@ section {
 }
 
 @keyframes particleFloat {
-    0%, 100% { transform: translate(0, 0); }
-    33% { transform: translate(30px, -30px); }
-    66% { transform: translate(-20px, 20px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    33% {
+        transform: translate(30px, -30px);
+    }
+
+    66% {
+        transform: translate(-20px, 20px);
+    }
 }
 
 /* Geometric Shapes Animation */
 .geometric-bg::before {
-    background-image: 
+    background-image:
         linear-gradient(45deg, transparent 30%, rgba(37, 99, 235, 0.05) 30%, rgba(37, 99, 235, 0.05) 70%, transparent 70%),
         linear-gradient(-45deg, transparent 30%, rgba(59, 130, 246, 0.05) 30%, rgba(59, 130, 246, 0.05) 70%, transparent 70%);
     background-size: 100px 100px;
@@ -1404,13 +1524,18 @@ section {
 }
 
 @keyframes geometricMove {
-    0% { background-position: 0 0, 50px 50px; }
-    100% { background-position: 100px 100px, 150px 150px; }
+    0% {
+        background-position: 0 0, 50px 50px;
+    }
+
+    100% {
+        background-position: 100px 100px, 150px 150px;
+    }
 }
 
 /* Wave Animation */
 .wave-bg::before {
-    background: 
+    background:
         linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.03), transparent),
         linear-gradient(180deg, transparent, rgba(59, 130, 246, 0.03), transparent);
     background-size: 50% 50%;
@@ -1418,13 +1543,20 @@ section {
 }
 
 @keyframes wave {
-    0%, 100% { background-position: 0% 0%, 100% 100%; }
-    50% { background-position: 100% 100%, 0% 0%; }
+
+    0%,
+    100% {
+        background-position: 0% 0%, 100% 100%;
+    }
+
+    50% {
+        background-position: 100% 100%, 0% 0%;
+    }
 }
 
 /* Grid Animation */
 .grid-bg::before {
-    background-image: 
+    background-image:
         linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -1432,8 +1564,13 @@ section {
 }
 
 @keyframes gridScroll {
-    0% { background-position: 0 0; }
-    100% { background-position: 50px 50px; }
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50px 50px;
+    }
 }
 
 /* About Section */
@@ -1441,8 +1578,8 @@ section {
     position: relative;
 }
 
-#about .section-title{
-  color: #5fef37;
+#about .section-title {
+    color: #5fef37;
 }
 
 .about-content {
@@ -1501,9 +1638,11 @@ section {
 .stat-card {
     text-align: center;
     padding: 2rem;
-    background: rgba(206, 220, 128, 0.111);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .stat-number {
@@ -1521,8 +1660,9 @@ section {
 /* Skills Section */
 
 #skills .section-title {
-    color: #7cf5ff;              /* cyan */
-    text-shadow: 
+    color: #7cf5ff;
+    /* cyan */
+    text-shadow:
         0 0 8px rgba(124, 245, 255, 0.6),
         0 0 16px rgba(124, 245, 255, 0.4);
 }
@@ -1534,10 +1674,12 @@ section {
 }
 
 .skill-category {
-    background: rgba(236, 230, 230, 0.178);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .skill-category h3 {
@@ -1558,8 +1700,9 @@ section {
 /* Projects Section */
 
 #projects .section-title {
-    color: #7cf5ff;              /* cyan */
-    text-shadow: 
+    color: #7cf5ff;
+    /* cyan */
+    text-shadow:
         0 0 8px rgba(124, 245, 255, 0.6),
         0 0 16px rgba(124, 245, 255, 0.4);
 }
@@ -1575,7 +1718,8 @@ section {
     margin-bottom: 3rem;
     flex-wrap: wrap;
     position: relative;
-    z-index: 10; /* Ensure buttons are above background animations */
+    z-index: 10;
+    /* Ensure buttons are above background animations */
 }
 
 .filter-btn {
@@ -1588,7 +1732,8 @@ section {
     transition: all 0.3s;
     font-weight: 500;
     position: relative;
-    z-index: 10; /* Ensure buttons are clickable */
+    z-index: 10;
+    /* Ensure buttons are clickable */
 }
 
 .filter-btn.active,
@@ -1602,7 +1747,8 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     position: relative;
-    z-index: 1; /* Ensure grid is above background animations */
+    z-index: 1;
+    /* Ensure grid is above background animations */
 }
 
 .project-card {
@@ -1612,7 +1758,8 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     position: relative;
-    z-index: 1; /* Ensure cards are above background animations */
+    z-index: 1;
+    /* Ensure cards are above background animations */
 }
 
 .project-card:hover {
@@ -1627,7 +1774,7 @@ section {
 
 .project-content {
     padding: 1.5rem;
-    color:#fafafa
+    color: #fafafa
 }
 
 .project-content h3 {
@@ -1638,16 +1785,16 @@ section {
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
+    gap: 0.1rem;
+    margin: 0.1rem 0;
 }
 
 .tag {
-    padding: 0.25rem 0.75rem;
+    padding: 0.1rem 0.5rem;
     /* background: rgb(227, 220, 204); */
     border-radius: 15px;
     font-size: 0.85rem;
-    color: rgb(10, 223, 152);
+    color: rgb(230, 147, 38);
 }
 
 .project-links {
@@ -1662,7 +1809,8 @@ section {
     font-weight: 500;
     transition: color 0.3s;
     position: relative;
-    z-index: 2; /* Ensure links are clickable */
+    z-index: 2;
+    /* Ensure links are clickable */
 }
 
 .project-links a:hover {
@@ -1672,8 +1820,9 @@ section {
 
 /* Certificates Section */
 #certificates .section-title {
-    color: #59ef37;              /* cyan */
-    text-shadow: 
+    color: #59ef37;
+    /* cyan */
+    text-shadow:
         0 0 8px rgba(124, 245, 255, 0.6),
         0 0 16px rgba(124, 245, 255, 0.4);
 }
@@ -1691,7 +1840,8 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-left: 4px solid var(--primary-color);
     position: relative;
-    z-index: 1; /* Ensure cards are above background animations */
+    z-index: 1;
+    /* Ensure cards are above background animations */
 }
 
 .certificate-card h3 {
@@ -1717,7 +1867,8 @@ section {
     font-weight: 500;
     transition: all 0.3s;
     position: relative;
-    z-index: 2; /* Ensure links are clickable */
+    z-index: 2;
+    /* Ensure links are clickable */
 }
 
 .certificate-card a:hover {
@@ -1747,8 +1898,15 @@ section {
 }
 
 @keyframes contactFloat {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(20px, 20px) rotate(5deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(20px, 20px) rotate(5deg);
+    }
 }
 
 .contact-wrapper {
