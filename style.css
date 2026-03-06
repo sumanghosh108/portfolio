@@ -29,14 +29,18 @@ body {
 /* Navigation */
 nav {
     position: fixed;
-    top: 0;
-    width: 100%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
     background: rgba(15, 23, 42, 0.65);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .nav-container {
@@ -908,40 +912,52 @@ section {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: rgb(168, 175, 164);
+    padding: 1.5rem;
+    /* Reduced from 2.5rem */
+    border-radius: 12px;
+    /* Slightly smaller radius */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    /* Softer shadow for compact size */
 }
 
 .contact-form-section h3 {
     color: var(--white);
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    /* Reduced from 1.8rem */
+    margin-bottom: 1rem;
+    /* Reduced from 1.5rem */
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    /* Reduced from 1.5rem */
 }
 
 .form-group label {
     display: block;
     color: var(--white);
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    /* Slightly smaller label */
+    margin-bottom: 0.3rem;
+    /* Reduced from 0.5rem */
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+    /* Reduced padding from 0.9rem */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    /* Slightly smaller radius */
+    font-size: 0.95rem;
+    /* Slightly smaller font */
     font-family: inherit;
     transition: all 0.3s;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--white);
+    background: transparent;
+    color: #000000;
 }
 
 .form-group input:focus,
@@ -949,7 +965,7 @@ section {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
 }
 
 .form-group input:-webkit-autofill,
@@ -958,23 +974,30 @@ section {
 .form-group textarea:-webkit-autofill,
 .form-group textarea:-webkit-autofill:hover,
 .form-group textarea:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--white);
+    -webkit-text-fill-color: #000000;
+    /* Dark text for the light autofill background */
+    -webkit-box-shadow: 0 0 0px 1000px #e8f0fe inset;
+    /* Force the default Chrome light blue autofill background just to make it consistent */
     transition: background-color 5000s ease-in-out 0s;
 }
 
 .form-group textarea {
-    min-height: 150px;
+    min-height: 100px;
+    /* Reduced from 150px */
     resize: vertical;
 }
 
 .form-submit-btn {
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
+    /* Reduced from 1rem 2rem */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: var(--white);
     border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
+    border-radius: 6px;
+    /* Match input radius */
+    font-size: 1rem;
+    /* Reduced from 1.1rem */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
@@ -1139,7 +1162,7 @@ footer p {
     /* Contact Section Mobile */
     .contact-wrapper {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 0.1rem;
     }
 
     .contact-info-section h2 {
@@ -1147,7 +1170,7 @@ footer p {
     }
 
     .contact-form-section {
-        padding: 1.5rem;
+        padding: 0.5rem;
     }
 
     .contact-detail-item:hover {
@@ -2029,14 +2052,14 @@ section {
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .form-group label {
     display: block;
     color: var(--text-dark);
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .form-group input,
