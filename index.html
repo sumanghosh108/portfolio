@@ -96,7 +96,7 @@
         <div class="hero-content">
             <img src="images/pic_suman.jpg" alt="Suman Ghosh" class="profile-image">
             <h1>Hi, I'm Suman</h1>
-            <h2>Machine Learning/MLOps/Data Engineer</h2>
+            <h2><span id="rotating-text">Machine Learning Engineer</span><span class="cursor">|</span></h2>
             <p>Passionate about building ethical and impactful AI integrated solutions. I leverage data to uncover
                 insights, build predictive models, and drive informed decisions, always with a strong focus on fairness,
                 transparency, and user well-being.</p>
@@ -896,5 +896,57 @@
                 submitBtn.disabled = false;
             });
         }
+
+        // Typewriter Effect for Rotating Text
+        const titles = [
+            'Machine Learning Engineer',
+            'AI Engineer',
+            'Data Engineer',
+            'Data Scientist',
+            'MLOps Engineer'
+        ];
+        
+        let currentIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const rotatingText = document.getElementById('rotating-text');
+        const typingSpeed = 100; // Speed of typing (ms per character)
+        const deletingSpeed = 50; // Speed of deleting (ms per character)
+        const pauseBeforeDelete = 2000; // Pause after typing complete
+        const pauseBeforeType = 500; // Pause before typing new text
+        
+        function typeWriter() {
+            const currentTitle = titles[currentIndex];
+            
+            if (isDeleting) {
+                // Delete characters
+                rotatingText.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    currentIndex = (currentIndex + 1) % titles.length;
+                    setTimeout(typeWriter, pauseBeforeType);
+                    return;
+                }
+                
+                setTimeout(typeWriter, deletingSpeed);
+            } else {
+                // Type characters
+                rotatingText.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+                
+                if (charIndex === currentTitle.length) {
+                    isDeleting = true;
+                    setTimeout(typeWriter, pauseBeforeDelete);
+                    return;
+                }
+                
+                setTimeout(typeWriter, typingSpeed);
+            }
+        }
+        
+        // Start the typewriter effect
+        typeWriter();
     </script>
 </body>
