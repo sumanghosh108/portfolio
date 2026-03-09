@@ -26,12 +26,54 @@ const PROJECTS_DATA = {
       overview: "https://github.com/sumanghosh108/AgenticAI/blob/main/README.md"
     },
     metadata: {
-      completed: "February 2026",
+      completed: "Yes",
       duration: "4 months",
-      role: "Full Stack Developer",
+      role: "AI Engineer",
       team: "Solo project"
     },
     category: "ml db"
+  },
+
+  "voice-assistant": {
+    id: "voice-assistant",
+    title: "Voice Assistant",
+    shortDescription: "A production-ready streaming voice assistant application that acts as a voice-to-voice AI conversation system [1, 2].",
+    fullDescription: [
+      "The system processes audio input through an asynchronous event pipeline, achieving end-to-end processing in under 2 seconds.",
+      "It receives audio via WebSocket, transcribes it using Whisper ASR, generates responses using Gemini LLM, synthesizes speech using ElevenLabs TTS, and streams the synthesized audio back to the client.",
+      "Built on a streaming-first architecture using Python's asyncio, it handles 100+ concurrent sessions with independent queues and tasks per session to prevent cross-contamination.",
+      "The platform is resilient and observable by design, featuring configurable timeouts, circuit breakers, a metrics dashboard, and session recording for debugging."
+    ],
+    tags: ["Python",
+    "Voice Assistant",
+    "AI Conversation System",
+    "Real-Time Streaming",
+    "WebSocket",
+    "Asyncio",
+    "OpenAI Whisper",
+    "Google Gemini",
+    "ElevenLabs TTS",
+    "Docker"],
+    features: [
+      "Real-time audio streaming via bidirectional WebSocket connections for low-latency audio I/O.",
+      "Speech recognition using OpenAI Whisper API with partial and final transcription results.",
+      "Intelligent responses from Google Gemini LLM with streaming token-by-token generation.",
+      "Natural speech synthesis using ElevenLabs TTS with streaming audio output.",
+      "Low latency end-to-end processing under 2 seconds (ASR: 500ms, LLM first token: 300ms, TTS: 400ms).",
+      "Concurrent session support for 100+ simultaneous voice conversations with session isolation [1, 3].",
+      "Resilience patterns including configurable timeouts, exponential backoff retries, and circuit breakers that prevent cascading failures.",
+      "Comprehensive observability with a real-time metrics dashboard, structured JSON logging, and a session recording/replay system."
+    ],
+    links: {
+      github: "https://github.com/sumanghosh108/VoiceAssistant"
+    },
+    metadata: {
+      completed: "Yes",
+      duration: "2 months",
+      role: "AI Engineer",
+      team: "Solo"
+    },
+    category: "ml"
   },
 
   "brain-tumor-detection": {
