@@ -237,6 +237,40 @@ class ModalController {
 
     // Setup image error handling
     this.setupImageErrorHandling();
+    
+    // Setup hover text change for Implementation button
+    this.setupImplementationButtonHover();
+  }
+  
+  /**
+   * Setup hover text change for Implementation button
+   */
+  setupImplementationButtonHover() {
+    const implButton = this.modal.querySelector('.modal-implementation-btn');
+    if (implButton) {
+      const defaultText = implButton.getAttribute('data-default-text');
+      const hoverText = implButton.getAttribute('data-hover-text');
+      
+      implButton.addEventListener('mouseenter', () => {
+        implButton.textContent = hoverText;
+      });
+      
+      implButton.addEventListener('mouseleave', () => {
+        implButton.textContent = defaultText;
+      });
+      
+      // Also handle click to close modal and scroll to contact
+      implButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.close();
+        setTimeout(() => {
+          const contactSection = document.querySelector('#contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 300);
+      });
+    }
   }
 
   /**

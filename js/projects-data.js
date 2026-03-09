@@ -22,8 +22,7 @@ const PROJECTS_DATA = {
       "Docker containerization for easy deployment"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/AgenticAI",
-      overview: "https://github.com/sumanghosh108/AgenticAI/blob/main/README.md"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "Yes",
@@ -65,7 +64,7 @@ const PROJECTS_DATA = {
       "Comprehensive observability with a real-time metrics dashboard, structured JSON logging, and a session recording/replay system."
     ],
     links: {
-      github: "https://github.com/sumanghosh108/VoiceAssistant"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "Yes",
@@ -96,7 +95,7 @@ const PROJECTS_DATA = {
       "93% accuracy on test dataset"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/BrainTumorDetection"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "December 2025",
@@ -125,7 +124,7 @@ const PROJECTS_DATA = {
       "Comparative model evaluation"
     ],
     links: {
-      github: ""
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "October 2025",
@@ -155,7 +154,7 @@ const PROJECTS_DATA = {
       "Historical trend analysis"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/Air-Quality-Index-Prediction"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "September 2025",
@@ -187,8 +186,7 @@ const PROJECTS_DATA = {
       "Docker containerization"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/EmployeeManagementSystem",
-      overview: "https://github.com/sumanghosh108/EmployeeManagementSystem/blob/master/README.md"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "March 2026",
@@ -219,7 +217,7 @@ const PROJECTS_DATA = {
       "SQLite database for offline access"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/opengeo"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "August 2025",
@@ -250,7 +248,7 @@ const PROJECTS_DATA = {
       "Responsive design for mobile viewing"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/Automobile-sales-dash-app"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "July 2025",
@@ -281,7 +279,7 @@ const PROJECTS_DATA = {
       "Inventory optimization insights"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/Sales"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "June 2025",
@@ -312,7 +310,7 @@ const PROJECTS_DATA = {
       "Database normalization and ACID compliance"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/BankingSystem"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "May 2025",
@@ -342,7 +340,9 @@ const PROJECTS_DATA = {
       "Diversity and inclusion metrics",
       "Interactive filtering and drill-down"
     ],
-    links: {},
+    links: {
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+    },
     metadata: {
       completed: "April 2025",
       duration: "1 month",
@@ -373,7 +373,7 @@ const PROJECTS_DATA = {
       "RESTful API backend"
     ],
     links: {
-      github: "https://github.com/sumanghosh108/Quiz-app"
+      overview: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     metadata: {
       completed: "March 2025",

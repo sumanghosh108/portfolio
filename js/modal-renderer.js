@@ -158,24 +158,8 @@ class ModalRenderer {
    * @returns {string} HTML string
    */
   renderLinks(links) {
-    if (!links || Object.keys(links).length === 0) {
-      return '';
-    }
-
-    let html = '';
-    
-    const linkLabels = {
-      github: 'GitHub',
-      demo: 'Live Demo',
-      overview: 'Overview'
-    };
-    
-    for (const [key, url] of Object.entries(links)) {
-      if (url) {
-        const label = linkLabels[key] || key.charAt(0).toUpperCase() + key.slice(1);
-        html += `<a href="${this.sanitizeHTML(url)}" class="modal-link" target="_blank" rel="noopener noreferrer">${this.sanitizeHTML(label)}</a>`;
-      }
-    }
+    // Always render Implementation button that links to contact form
+    let html = '<a href="#contact" class="modal-link modal-implementation-btn" data-default-text="Implementation" data-hover-text="Connect to project owner. Drop a message">Implementation</a>';
     
     return html;
   }

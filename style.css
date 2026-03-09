@@ -736,21 +736,37 @@ section {
 }
 
 .project-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    display: flex !important;
+    gap: 0.75rem !important;
+    margin-top: auto !important;
+    padding-top: 1.5rem !important;
+    flex-wrap: wrap !important;
+    flex-shrink: 0 !important;
 }
 
 .project-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    padding: 0.6rem 1.5rem !important;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 3px 15px rgba(16, 185, 129, 0.4) !important;
+    border: none !important;
+    text-transform: capitalize !important;
+    letter-spacing: 0.3px !important;
+    flex: 0 1 calc(50% - 0.375rem) !important;
+    text-align: center !important;
+    display: inline-block !important;
 }
 
 .project-links a:hover {
-    color: var(--secondary-color);
-} */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.6) !important;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+}
 
 /* Certificates Section */
 .certificates-grid {
@@ -1805,10 +1821,11 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     position: relative;
     z-index: 1;
+    grid-auto-rows: minmax(400px, auto);
     /* Ensure grid is above background animations */
 }
 
@@ -1820,6 +1837,9 @@ section {
     transition: transform 0.3s;
     position: relative;
     z-index: 1;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
     /* Ensure cards are above background animations */
 }
 
@@ -1835,7 +1855,11 @@ section {
 
 .project-content {
     padding: 1.5rem;
-    color: #fafafa
+    color: #fafafa;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    min-height: 0 !important;
 }
 
 .project-content h3 {
@@ -1848,6 +1872,7 @@ section {
     flex-wrap: wrap;
     gap: 0.1rem;
     margin: 0.1rem 0;
+    flex-shrink: 0;
 }
 
 .tag {
@@ -1858,26 +1883,7 @@ section {
     color: rgb(230, 147, 38);
 }
 
-.project-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
 
-.project-links a {
-    color: greenyellow;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-    z-index: 2;
-    /* Ensure links are clickable */
-}
-
-.project-links a:hover {
-    color: red;
-    text-decoration: underline;
-}
 
 /* Certificates Section */
 #certificates .section-title {
