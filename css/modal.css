@@ -1,0 +1,448 @@
+/* Modal Styles - Project Details Modal */
+
+/* Modal Overlay - Semi-transparent backdrop */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-overlay.closing {
+  opacity: 0;
+}
+
+/* Modal Container - Main modal box */
+.modal-container {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.1);
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.3s ease-out;
+  will-change: transform, opacity;
+}
+
+/* When modal is active, container should be visible */
+.modal-overlay.active .modal-container {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-container.opening {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-container.closing {
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+}
+
+/* Remove will-change after animation */
+.modal-overlay.active .modal-container {
+  will-change: auto;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f59e0b;
+  line-height: 1.2;
+  margin: 0;
+  padding-right: 2rem;
+}
+
+.modal-close {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fca5a5;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  background: rgba(239, 68, 68, 0.5);
+  border-color: rgba(239, 68, 68, 0.7);
+  transform: scale(1.1) rotate(90deg);
+  color: #ffffff;
+}
+
+.modal-close:focus {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Modal Body - Scrollable content area */
+.modal-body {
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: calc(90vh - 180px);
+  contain: layout style paint;
+  background: rgba(0, 0, 0, 0.2);
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Modal Description */
+.modal-description {
+  margin-bottom: 1.5rem;
+}
+
+.modal-description p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modal-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Modal Tags */
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-tag {
+  padding: 0.4rem 1rem;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fbbf24;
+}
+
+/* Modal Features */
+.modal-features {
+  margin-bottom: 1.5rem;
+}
+
+.modal-features h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.modal-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-features li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  color: #e2e8f0;
+  position: relative;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modal-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Modal Screenshots */
+.modal-screenshots {
+  margin-bottom: 1.5rem;
+}
+
+.modal-screenshots h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 1rem;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.screenshot-grid img:hover {
+  transform: scale(1.05);
+}
+
+.screenshot-grid img.image-error {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+/* Modal Metadata */
+.modal-metadata {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.metadata-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metadata-item:last-child {
+  border-bottom: none;
+}
+
+.metadata-label {
+  font-weight: 600;
+  color: #10b981;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.metadata-value {
+  color: #e2e8f0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-link {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  display: inline-block;
+}
+
+.modal-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.modal-link:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Error Message */
+.modal-error-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(220, 38, 38, 0.95);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+  animation: slideInRight 0.3s ease-out;
+}
+
+.modal-error-message.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  .modal-container {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+    max-height: calc(95vh - 160px);
+  }
+  
+  .modal-footer {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+  }
+  
+  .modal-link {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .metadata-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+/* Tablet: 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal-container {
+    width: 85%;
+  }
+}
+
+/* Desktop: > 1024px */
+@media (min-width: 1025px) {
+  .modal-container {
+    width: 80%;
+  }
+}
+
+/* Browser Compatibility Fallbacks */
+.no-backdrop-filter .modal-overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.no-backdrop-filter .modal-container {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+/* GPU Acceleration */
+.modal-overlay,
+.modal-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
