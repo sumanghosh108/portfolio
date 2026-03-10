@@ -2647,9 +2647,25 @@ footer p {
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
     
-    .stat-card {
-        background: rgba(0, 0, 0, 0.5) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    /* Add different colors to stat cards on mobile */
+    .stat-card:nth-child(1) {
+        background: rgba(59, 130, 246, 0.3) !important; /* Blue */
+        border: 1px solid rgba(59, 130, 246, 0.4) !important;
+    }
+    
+    .stat-card:nth-child(2) {
+        background: rgba(16, 185, 129, 0.3) !important; /* Green */
+        border: 1px solid rgba(16, 185, 129, 0.4) !important;
+    }
+    
+    .stat-card:nth-child(3) {
+        background: rgba(245, 101, 101, 0.3) !important; /* Red */
+        border: 1px solid rgba(245, 101, 101, 0.4) !important;
+    }
+    
+    .stat-card:nth-child(4) {
+        background: rgba(168, 85, 247, 0.3) !important; /* Purple */
+        border: 1px solid rgba(168, 85, 247, 0.4) !important;
     }
     
     /* Make stat card text white and visible on mobile */
