@@ -2849,3 +2849,23 @@ nav {
         font-size: 0.9rem !important;
     }
 }
+
+
+/* Make navbar height smaller */
+nav {
+    padding: 0.4rem 0 !important;
+}
+
+.logo-container .logo-image {
+    height: 40px !important;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0.35rem 0 !important;
+    }
+    
+    .logo-container .logo-image {
+        height: 32px !important;
+    }
+}
