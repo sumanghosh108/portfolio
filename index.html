@@ -140,10 +140,18 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Product</a></li>
+                <li class="dropdown">
+                    <a href="#projects">Product</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#projects" data-filter="all">All</a></li>
+                        <li><a href="#projects" data-filter="ml">Machine Learning & AI</a></li>
+                        <li><a href="#projects" data-filter="viz">Analysis</a></li>
+                        <li><a href="#projects" data-filter="db">Database</a></li>
+                    </ul>
+                </li>
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="https://blog.sumannaba.in" target="_blank">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Connect</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -815,6 +823,24 @@
 
             const filterBtns = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.project-card');
+
+            // Dropdown menu filter functionality
+            const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const filter = link.dataset.filter;
+                    
+                    // Trigger the corresponding filter button
+                    const targetBtn = Array.from(filterBtns).find(btn => btn.dataset.filter === filter);
+                    if (targetBtn) {
+                        targetBtn.click();
+                    }
+                    
+                    // Scroll to projects section
+                    document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
