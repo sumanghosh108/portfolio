@@ -2687,3 +2687,119 @@ footer p {
         animation-duration: 40s !important; /* Slower = less CPU */
     }
 }
+
+
+/* Push navbar items to right and logo to left */
+.nav-container {
+    max-width: 1400px !important;
+    padding: 0 4rem !important;
+    margin: 0 auto !important;
+}
+
+.logo-container {
+    margin-right: auto !important;
+}
+
+.nav-menu {
+    margin-left: auto !important;
+    gap: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1.5rem !important;
+    }
+}
+
+
+/* Navbar spacing and alignment like reference */
+.nav-menu {
+    gap: 1.5rem !important;
+}
+
+.nav-menu li {
+    margin: 0 !important;
+}
+
+
+/* Force navbar color changes */
+nav {
+    background: rgba(26, 35, 50, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.nav-menu a {
+    color: #cbd5e1 !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+}
+
+.nav-menu a:hover {
+    color: #60a5fa !important;
+}
+
+/* Mobile nav menu color */
+@media (max-width: 768px) {
+    .nav-menu {
+        background-color: rgba(26, 35, 50, 0.95) !important;
+    }
+    
+    .nav-menu a {
+        color: #cbd5e1 !important;
+    }
+    
+    .nav-menu a:hover {
+        color: #60a5fa !important;
+    }
+}
+
+
+/* Make certificate section transparent */
+#certificates {
+    background: transparent !important;
+    background-image: url('images/liana-s-SJ_dbgNpcWg-unsplash.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    position: relative !important;
+}
+
+#certificates::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#certificates .container {
+    position: relative;
+    z-index: 1;
+}
+
+.certificate-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Make logo smaller */
+.logo-container .logo-image {
+    height: 45px !important;
+    width: auto !important;
+}
+
+@media (max-width: 768px) {
+    .logo-container .logo-image {
+        height: 35px !important;
+    }
+}
