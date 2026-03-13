@@ -2954,7 +2954,7 @@ nav {
 footer {
     background: #0f1419 !important;
     color: #cbd5e1 !important;
-    padding: 4rem 2rem 2rem !important;
+    padding: 3.5rem 4rem 2rem !important;
 }
 
 .footer-container {
@@ -2962,17 +2962,17 @@ footer {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 4rem;
+    gap: 5rem;
     padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-column h4 {
     color: #ffffff;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 1.25rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.3px;
 }
 
 .footer-column ul {
@@ -2982,15 +2982,16 @@ footer {
 }
 
 .footer-column ul li {
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.9rem;
 }
 
 .footer-column ul li a {
-    color: #94a3b8;
+    color: #8b92a0;
     text-decoration: none;
     font-size: 0.875rem;
     transition: color 0.3s ease;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 400;
 }
 
 .footer-column ul li a:hover {
@@ -3007,24 +3008,164 @@ footer {
 .footer-bottom p {
     margin-bottom: 0.5rem;
     color: #64748b;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
 }
 
 /* Mobile footer */
 @media (max-width: 768px) {
     footer {
-        padding: 3rem 1.5rem 1.5rem !important;
+        padding: 3rem 2rem 1.5rem !important;
     }
     
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
+        gap: 3rem;
     }
 }
 
 @media (max-width: 480px) {
+    footer {
+        padding: 2.5rem 1.5rem 1.5rem !important;
+    }
+    
     .footer-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+}
+
+
+/* Connect Section Styling */
+.connect-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.connect-content h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.connect-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+}
+
+.connect-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    margin-top: 1rem;
+}
+
+.connect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.connect-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.connect-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Mobile Connect Section */
+@media (max-width: 768px) {
+    .connect-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .connect-content h2 {
+        font-size: 2rem;
+    }
+    
+    .connect-content p {
+        font-size: 1rem;
+    }
+    
+    .connect-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* Footer Override - Final Styling */
+body footer {
+    background: #0f1419 !important;
+    color: #cbd5e1 !important;
+    padding: 3.5rem 4rem 2rem !important;
+}
+
+body footer .footer-container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 5rem !important;
+    padding-bottom: 3rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body footer .footer-column h4 {
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important;
+    letter-spacing: 0.3px !important;
+}
+
+body footer .footer-column ul li a {
+    color: #8b92a0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+}
+
+body footer .footer-column ul li a:hover {
+    color: #60a5fa !important;
+}
+
+@media (max-width: 768px) {
+    body footer {
+        padding: 3rem 2rem 1.5rem !important;
+    }
+    
+    body footer .footer-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body footer {
+        padding: 2.5rem 1.5rem 1.5rem !important;
+    }
+    
+    body footer .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
     }
 }
