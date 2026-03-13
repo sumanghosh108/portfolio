@@ -2015,6 +2015,35 @@ section {
 
 /* Skills Section */
 
+/* Desktop background for skills section */
+@media (min-width: 769px) {
+    #skills {
+        background-image: url('images/Untitled (8).png') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        position: relative !important;
+    }
+    
+    #skills::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+        pointer-events: none;
+    }
+    
+    #skills .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 #skills .section-title {
     color: #7cf5ff;
     /* cyan */
